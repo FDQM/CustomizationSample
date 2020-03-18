@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:CustomizationSample.Controls"
+             xmlns:effect="clr-namespace:CustomizationSample.Effects"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             mc:Ignorable="d"
+             x:Class="CustomizationSample.MainPage"
+            android:TabbedPage.IsSmoothScrollEnabled="false">
+    <ContentPage Title="Page 1">
+        <StackLayout>
+            <Button Text="Platform speciﬁcs Button"
+                 android:Button.UseDefaultPadding="true"
+                android:Button.UseDefaultShadow="true"/>
+
+        <Label x:Name="OrientationLabel" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+    
+    </ContentPage>
+    
+    <ContentPage Title="Page 2">
+        <StackLayout>
+        <local:ExtendedEntry Placeholder="Entry"/>
+        </StackLayout>
+    </ContentPage>
+   
+    <ContentPage Title="Page 3">
+        <StackLayout>
+        <Entry Placeholder="Entry Foccused"
+               FontSize="22"
+               ios:Entry.AdjustsFontSizeToFitWidth="true">
+            <Entry.Effects>
+                <effect:FocussedEffect/>
+            </Entry.Effects>
+        </Entry>
+        </StackLayout>
+    </ContentPage>
+
+</TabbedPage>
